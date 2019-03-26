@@ -3,4 +3,5 @@ export class Empleado{
         this.nombre = nombre;
         this.salario = salario
     }
+    
 }
