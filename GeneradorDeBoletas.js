@@ -1,6 +1,6 @@
-class Generador{
+export class GeneradorDeBoletas{
     constructor(){
-    
+        
     }
 
     getMonto(){
