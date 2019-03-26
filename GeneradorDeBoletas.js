@@ -1,9 +1,14 @@
 export class GeneradorDeBoletas{
-    constructor(){
-        
+    constructor(empleado){
+        this.empleado = empleado;
     }
 
-    getMonto(){
-        return 0;
+    get monto(){
+        if(this.empleado == null){
+            return 0;
+        }
+        else{
+           return this.empleado.salario;
+        }
     }
 }
