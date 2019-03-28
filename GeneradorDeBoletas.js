@@ -1,12 +1,14 @@
 export class GeneradorDeBoletas{
-    constructor(empleado){
+    constructor(empleado, jornada, tarjeta){
         this.empleado = empleado;
         this.fechactual=String(new Date()).slice(0,15);
+        this.jornada = jornada;
+        this.tarjeta = tarjeta;
     }
 
     get monto(){
         if(this.empleado != null){
-           return this.empleado.salario;
+           return this.jornada.monto;
         }
         return 0;
     }

@@ -1,7 +1,5 @@
 export class Empleado{
-    constructor(nombre, salario){
+    constructor(nombre){
         this.nombre = nombre;
-        this.salario = salario
     }
-    
 }
