@@ -1,9 +1,13 @@
 export class TiempoParcial{
-    constructor(montoHora, horasTrabajadas){
+    constructor(montoHora, tarjetasDeAsistencia){
         this.montoHora = montoHora;
-        this.horasTrabajadas = horasTrabajadas;
+        this.tarjetasDeAsistencia = tarjetasDeAsistencia;
     }
     get monto(){
-        return this.montoHora * this.horasTrabajadas;
+        var totalHoras = 0;
+        this.tarjetasDeAsistencia.forEach(element => {
+            totalHoras += element.totalHorasTabajadas;
+        });
+        return this.montoHora * totalHoras;
     }
 }

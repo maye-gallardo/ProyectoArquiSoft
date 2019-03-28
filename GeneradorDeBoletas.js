@@ -1,14 +1,24 @@
+import { TiempoFijo } from "./TiempoFijo";
+import { TiempoParcial } from "./TiempoParcial";
+
 export class GeneradorDeBoletas{
-    constructor(empleado, jornada, tarjeta){
+    constructor(empleado, tarjeta){
         this.empleado = empleado;
         this.fechactual=String(new Date()).slice(0,15);
-        this.jornada = jornada;
         this.tarjeta = tarjeta;
     }
 
     get monto(){
         if(this.empleado != null){
-           return this.jornada.monto;
+            if(this.empleado.tipo == "FIJO"){
+                return new TiempoFijo(this.empleado.monto).monto;
+            }
+            else if(this.empleado.tipo == "PARCIAL"){
+                return new TiempoParcial(this.empleado.monto, this.tarjeta).monto;
+            }
+            else{
+                
+            }
         }
         return 0;
     }
