@@ -1,5 +1,5 @@
-import { TiempoFijo } from "./TiempoFijo";
-import { TiempoParcial } from "./TiempoParcial";
+import { TiempoFijo } from "./CalculadorTiempoFijo";
+import { TiempoParcial } from "./CalculadorTiempoParcial";
 
 export class GeneradorDeBoletas{
     constructor(empleado, tarjeta){

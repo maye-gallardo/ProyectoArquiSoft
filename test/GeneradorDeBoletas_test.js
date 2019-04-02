@@ -4,8 +4,8 @@ var should = require('chai').should();
 
 import {GeneradorDeBoletas} from '../GeneradorDeBoletas';
 import {Empleado} from '../Empleado';
-import { TiempoFijo } from '../TiempoFijo';
-import { TiempoParcial } from '../TiempoParcial';
+import { TiempoFijo } from '../CalculadorTiempoFijo';
+import { TiempoParcial } from '../CalculadorTiempoParcial';
 import { TarjetaAsistencia } from '../TarjetaAsistencia';
 
 describe("GeneradorDeBoletas", function() {
