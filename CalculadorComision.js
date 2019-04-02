@@ -1,11 +1,13 @@
 export class Comision{
-    constructor(sueldoBase, montoKardex, porcentajeComision, ventas){
-        this.sueldoBase = sueldoBase;
-        this.montoKardex = montoKardex;
+    constructor(porcentajeComision, TarjetaDeVentas){
         this.porcentajeComision = porcentajeComision;
-        this.ventas = ventas;
+        this.TarjetaDeVentas = TarjetaDeVentas;
     }
     get monto(){
-        return (this.sueldoBase - this.montoKardex) + (this.porcentajeComision * this.ventas);
+        var totalVentas = 0;
+        this.TarjetaDeVentas.forEach(element => {
+            totalVentas += element.MontoVendido;
+        });
+        return this.porcentajeComision * totalVentas;
     }
 }
