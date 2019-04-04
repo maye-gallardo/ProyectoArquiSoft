@@ -3,11 +3,14 @@ export class CalculadorComision{
         this.porcentajeComision = porcentajeComision;
         this.TarjetaDeVentas = TarjetaDeVentas;
     }
-    get calcularMonto(){
+    calcularTotalVentas(){
         var totalVentas = 0;
         this.TarjetaDeVentas.forEach(element => {
             totalVentas += element.MontoVendido;
         });
-        return this.porcentajeComision * totalVentas;
+        return totalVentas;
+    }
+    calcularMonto(){
+        return this.porcentajeComision * this.calcularTotalVentas();
     }
 }

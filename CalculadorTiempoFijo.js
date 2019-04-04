@@ -2,7 +2,7 @@ export class CalculadorTiempoFijo{
     constructor(montoKardex){
         this.montoKardex = montoKardex;
     }
-    get calcularMonto(){
+    calcularMonto(){
         return this.montoKardex;
     }
 }

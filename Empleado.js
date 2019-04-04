@@ -9,15 +9,18 @@ export class Empleado{
         this.tipo = tipo;
         this.porcentajeComision = porcentajeComision;
     }
-    calcularSalario(tarjetas){
+    identificarTipoDeEmpleado(tarjetas){
         if(this.tipo == "FIJO"){
-            return new CalculadorTiempoFijo(this.saldo).calcularMonto;
+            return new CalculadorTiempoFijo(this.saldo);
         }
         else if(this.tipo == "PARCIAL"){
-            return new CalculadorTiempoParcial(this.saldo, tarjetas).calcularMonto;
+            return new CalculadorTiempoParcial(this.saldo, tarjetas);
         }
         else{
-            return new CalculadorComision(this.porcentajeComision,tarjetas).calcularMonto;
+            return new CalculadorComision(this.porcentajeComision,tarjetas);
         }
+    }
+    calcularSalario(tarjetas){
+        return this.identificarTipoDeEmpleado(tarjetas).calcularMonto();
     }
 }
