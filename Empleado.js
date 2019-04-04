@@ -19,6 +19,8 @@ export class Empleado{
         else{
             return new CalculadorComision(this.porcentajeComision,tarjetas);
         }
+
+
     }
     calcularSalario(tarjetas){
         return this.identificarTipoDeEmpleado(tarjetas).calcularMonto();
