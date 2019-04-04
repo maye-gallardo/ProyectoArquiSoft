@@ -1,6 +1,6 @@
-import { TiempoFijo } from "./CalculadorTiempoFijo";
-import { TiempoParcial } from "./CalculadorTiempoParcial";
-import { Comision } from "./CalculadorComision";
+import { CalculadorTiempoFijo } from "./CalculadorTiempoFijo";
+import { CalculadorTiempoParcial } from "./CalculadorTiempoParcial";
+import { CalculadorComision } from "./CalculadorComision";
 
 export class Empleado{ 
     constructor(nombre, saldo, tipo, porcentajeComision){
@@ -11,13 +11,13 @@ export class Empleado{
     }
     calcularSalario(tarjetas){
         if(this.tipo == "FIJO"){
-            return new TiempoFijo(this.saldo).monto;
+            return new CalculadorTiempoFijo(this.saldo).monto;
         }
         else if(this.tipo == "PARCIAL"){
-            return new TiempoParcial(this.saldo, tarjetas).monto;
+            return new CalculadorTiempoParcial(this.saldo, tarjetas).monto;
         }
         else{
-            return new Comision(this.porcentajeComision,tarjetas).monto;
+            return new CalculadorComision(this.porcentajeComision,tarjetas).monto;
         }
     }
 }

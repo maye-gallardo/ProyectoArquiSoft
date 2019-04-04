@@ -3,8 +3,8 @@ var expect = require('chai').expect;
 var should = require('chai').should();
 
 import {Empleado} from '../Empleado';
-import { TiempoFijo } from '../CalculadorTiempoFijo';
-import { TiempoParcial } from '../CalculadorTiempoParcial';
+import { CalculadorTiempoFijo } from '../CalculadorTiempoFijo';
+import { CalculadorTiempoParcial } from '../CalculadorTiempoParcial';
 import { TarjetaAsistencia } from '../TarjetaAsistencia';
 import { TarjetaVenta } from '../TarjetaVenta';
 

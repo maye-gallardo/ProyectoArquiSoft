@@ -1,4 +1,4 @@
-export class TiempoParcial{
+export class CalculadorTiempoParcial{
     constructor(montoHora, tarjetasDeAsistencia){
         this.montoHora = montoHora;
         this.tarjetasDeAsistencia = tarjetasDeAsistencia;
