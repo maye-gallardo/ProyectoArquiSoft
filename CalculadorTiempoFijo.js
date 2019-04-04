@@ -5,19 +5,17 @@ export class CalculadorTiempoFijo{
     calcularMonto(){
         return this.montoKardex;
     }
-    obtenerDia(){
-        var today = new Date();
-        return today.getDay();
+    obtenerDia(date){
+        return date.getDay();
     }
-    obtenerMes(){
-        var today = new Date();
-        return today.getDate();
+    obtenerMes(date){
+        return date.getDate();
     }
-    esUltimoViernesDelMes(){
-        return (this.obtenerDia()==5)&&(this.obtenerMes()>24);
+    esUltimoViernesDelMes(date){
+        return (this.obtenerDia(date)==5)&&(this.obtenerMes(date)>24);
     }
-    verificarFecha(){
-        if (esUltimoViernesDelMes()){
+    verificarFecha(date){
+        if (this.esUltimoViernesDelMes(date)){
             return true;
         }
         else{

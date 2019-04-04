@@ -13,19 +13,17 @@ export class CalculadorComision{
     calcularMonto(){
         return this.porcentajeComision * this.calcularTotalVentas();
     }
-    obtenerDia(){
-        var today = new Date();
-        return today.getDay();
+    obtenerDia(date){
+        return date.getDay();
     }
-    obtenerMes(){
-        var today = new Date();
-        return today.getDate();
+    obtenerMes(date){
+        return date.getDate();
     }
-    esUltimoViernesDeLaSegundaSemanaDelMes(){
-        return (this.obtenerDia()==5)&&(this.obtenerMes()==14||this.obtenerMes()==28);
+    esSegundoViernes(date){
+        return (this.obtenerDia(date)==5)&&(this.obtenerMes(date)==14||this.obtenerMes(date)==28);
     }
-    verificarFecha(){
-        if (esUltimoViernesDeLaSegundaSemanaDelMes()){
+    verificarFecha(date){
+        if (this.esSegundoViernes(date)){
             return true;
         }
         else{

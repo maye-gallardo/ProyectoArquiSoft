@@ -13,12 +13,11 @@ export class CalculadorTiempoParcial{
     calcularMonto(){
         return this.montoHora * this.calcularTotalHoras();
     }
-    obtenerFecha(){
-        var today = new Date();
-        return today.getDay();
+    obtenerFecha(date){
+        return date.getDay();
     }
-    verificarFecha(){
-        if (this.obtenerFecha()==5){
+    verificarFecha(date){
+        if (this.obtenerFecha(date)==5){
             return true;
         }
         else{
