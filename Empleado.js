@@ -11,13 +11,13 @@ export class Empleado{
     }
     calcularSalario(tarjetas){
         if(this.tipo == "FIJO"){
-            return new CalculadorTiempoFijo(this.saldo).monto;
+            return new CalculadorTiempoFijo(this.saldo).calcularMonto;
         }
         else if(this.tipo == "PARCIAL"){
-            return new CalculadorTiempoParcial(this.saldo, tarjetas).monto;
+            return new CalculadorTiempoParcial(this.saldo, tarjetas).calcularMonto;
         }
         else{
-            return new CalculadorComision(this.porcentajeComision,tarjetas).monto;
+            return new CalculadorComision(this.porcentajeComision,tarjetas).calcularMonto;
         }
     }
 }

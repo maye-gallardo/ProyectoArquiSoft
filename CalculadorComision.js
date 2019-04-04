@@ -3,7 +3,7 @@ export class CalculadorComision{
         this.porcentajeComision = porcentajeComision;
         this.TarjetaDeVentas = TarjetaDeVentas;
     }
-    get monto(){
+    get calcularMonto(){
         var totalVentas = 0;
         this.TarjetaDeVentas.forEach(element => {
             totalVentas += element.MontoVendido;
