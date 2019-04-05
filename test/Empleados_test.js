@@ -13,6 +13,8 @@ describe("Empleados", function() {
     it("si se pregunta si valido pagar para Juan Perez de tipo comision debe recibir un true", function() {
       let empleado = new Empleado("Pepito Gonzalez", 1500, "FIJO", null);
       expect(empleado.calcularSalario()).equal(1500);
-      expect(empleado.esValidoRecibirSalario(null, new Date('2019-04-26T03:24:00'))).equal(true);
+      expect(empleado.esValidoRecibirSalario(new Date('2019-04-26T03:24:00'))).equal(true);
     });
+
+
 });

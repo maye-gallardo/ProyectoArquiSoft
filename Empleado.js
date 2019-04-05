@@ -1,6 +1,5 @@
-import { CalculadorTiempoFijo } from "./CalculadorTiempoFijo";
-import { CalculadorTiempoParcial } from "./CalculadorTiempoParcial";
-import { CalculadorComision } from "./CalculadorComision";
+import { CalculadorSalario } from "./CalculadorSalario";
+import { CalculadorFecha } from "./CalculadorFecha";
 
 export class Empleado{ 
     constructor(nombre, saldo, tipo, porcentajeComision){
@@ -10,22 +9,12 @@ export class Empleado{
         this.porcentajeComision = porcentajeComision;
     }
     identificarTipoDeEmpleado(tarjetas){
-        if(this.tipo == "FIJO"){
-            return new CalculadorTiempoFijo(this.saldo);
-        }
-        else if(this.tipo == "PARCIAL"){
-            return new CalculadorTiempoParcial(this.saldo, tarjetas);
-        }
-        else{
-            return new CalculadorComision(this.porcentajeComision,tarjetas);
-        }
-
-
+        return new CalculadorSalario(this.tipo).tipoEmpleado(this.saldo, tarjetas, this.porcentajeComision);
     }
     calcularSalario(tarjetas){
         return this.identificarTipoDeEmpleado(tarjetas).calcularMonto();
     }
-    esValidoRecibirSalario(tarjetas, date){
-        return this.identificarTipoDeEmpleado(tarjetas).verificarFecha(date);
+    esValidoRecibirSalario(date){
+        return new CalculadorFecha().estaEsLaFechaDePaga(this.tipo, date);
     }
 }
