@@ -4,6 +4,7 @@ var should = require('chai').should();
 
 import {Empleado} from '../Empleado';
 import { TarjetaAsistencia } from '../TarjetaAsistencia';
+import { GeneradorDeBoletas } from '../GeneradorDeBoletas';
 
 describe("TarjetaAsistencia", function() {
 
