@@ -2,8 +2,8 @@ var assert = require('assert');
 var expect = require('chai').expect;
 var should = require('chai').should();
 
-import {Empleado} from '../Empleado';
-import { TarjetaVenta } from '../TarjetaVenta';
+import {Empleado} from '../src/Empleado';
+import { TarjetaVenta } from '../src/TarjetaVenta';
 
 describe("TarjetaVenta", function() {
     

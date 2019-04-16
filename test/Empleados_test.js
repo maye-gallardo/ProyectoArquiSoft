@@ -2,7 +2,7 @@ var assert = require('assert');
 var expect = require('chai').expect;
 var should = require('chai').should();
 
-import {Empleado} from '../Empleado';
+import {Empleado} from '../src/Empleado';
 describe("Empleados", function() {
   
     it("si se genera una boleta para Juan Perez de tipo fijo debe recibir el salario fijo", function() {
