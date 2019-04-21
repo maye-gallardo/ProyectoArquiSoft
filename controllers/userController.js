@@ -1,13 +1,14 @@
 var User = require('../models/user');
 
+
 // GET route for reading data
-exports.home = (req, res, next) =>  {
-  return res.sendFile(path.join(__dirname + '/templates/index.html'));
+exports.registerPage = (req, res, next) =>  {
+  return res.sendFile('register.html' , { root : './templates'});
 };
 
 // GET route for reading data
-exports.register = (req, res, next) =>  {
-  return res.sendFile(path.join(__dirname, '../templates', 'register.html'));
+exports.home = (req, res, next) =>  {
+  return res.sendFile('index.html' , { root : './templates'});
 };
 
 

@@ -14,10 +14,10 @@ export default (app) => {
         .put(user.updateUser)
         .delete(user.deleteUser);
 
+    app.route('/registration')
+        .get(user.registerPage)
+        .post(user.registerPage)
+
     app.route('/')
         .get(user.home)
-
-    app.route('/registration')
-        .get(user.register)
-        .post(user.register)
 };
