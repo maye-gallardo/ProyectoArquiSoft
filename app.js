@@ -4,6 +4,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
+import routes from './routes/router.js';
 
 //connect to MongoDB
 mongoose.connect('mongodb://localhost/testForAuth');
@@ -31,11 +32,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 
 // serve static files from template
-app.use(express.static(__dirname + '/templateLogReg'));
+app.use(express.static(__dirname + '/templates'));
 
 // include routes
-var routes = require('./routes/router');
-app.use('/', routes);
+routes(app);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
