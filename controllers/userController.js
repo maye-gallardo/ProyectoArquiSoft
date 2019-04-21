@@ -1,5 +1,16 @@
 var User = require('../models/user');
 
+// GET route for reading data
+exports.home = (req, res, next) =>  {
+  return res.sendFile(path.join(__dirname + '/templates/index.html'));
+};
+
+// GET route for reading data
+exports.register = (req, res, next) =>  {
+  return res.sendFile(path.join(__dirname, '../templates', 'register.html'));
+};
+
+
 exports.getUser = (req, res, next) => {
     User.findById(req.session.userId)
       .exec(function (error, user) {
