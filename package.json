@@ -12,14 +12,18 @@
   "scripts": {
     "coverage": "nyc mocha --require babel-register",
     "test": "mocha --require babel-register",
-    "start": "nodemon server.js --exec babel-node --presets env", 
-    "release": "npm run clean && npm run build && npm run serve", 
-    "clean": "rm -rf dist && mkdir dist", "build": "babel . -s -D -d dist --presets env --ignore node_modules", 
-    "serve": "node dist/server.js" 
+    "start": "nodemon server.js --exec babel-node --presets env",
+    "release": "npm run clean && npm run build && npm run serve",
+    "clean": "rm -rf dist && mkdir dist",
+    "build": "babel . -s -D -d dist --presets env --ignore node_modules",
+    "serve": "node dist/server.js"
   },
   "dependencies": {
+    "bcrypt": "^3.0.6",
     "chai": "^4.2.0",
+    "connect-mongo": "^2.0.3",
     "express": "^4.16.4",
+    "express-session": "^1.16.1",
     "mocha": "^5.2.0",
     "mongoose": "^5.5.2"
   },
