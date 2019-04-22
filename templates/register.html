@@ -92,14 +92,12 @@
                     <div class="form-group">
                         <div class="col-sm-9">
                             <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span>
-
-                                <input type="text"  onchange="try{setCustomValidity('')}catch(e){}" id="direc" th:field="*{direc}" placeholder="Direccion"
-                                    class="form-control" />
-
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                <input type="password" th:field="*{password}"
+                                    placeholder="Contraseña" class="form-control" />
                             </div>
-                            <label style="color: #C70039;" th:if="${#fields.hasErrors('direc')}" th:errors="*{direc}"
-                                class="validation-message"></label>
+                            <label style="color: #C70039;" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"
+                                    class="validation-message"></label>
                         </div>
                     </div>
 
@@ -107,10 +105,10 @@
                         <div class="col-sm-9">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                <input type="password" th:field="*{password}"
-                                    placeholder="Contraseña" class="form-control" />
+                                <input type="repeatPassword" th:field="*{repeatPassword}"
+                                    placeholder="Repetir Contraseña" class="form-control" />
                             </div>
-                            <label style="color: #C70039;" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"
+                            <label style="color: #C70039;" th:if="${#fields.hasErrors('repeatPassword')}" th:errors="*{repeatPassword}"
                                     class="validation-message"></label>
                         </div>
                     </div>
