@@ -1,0 +1,28 @@
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        background-image: url("/images/fondo4.jpg");
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        opacity: 80;
+    }
+    .nav{
+        background-color: black;
+        border: black;
+    }
+    .genera{
+        color: #E8F8F5;
+        background-color: black;
+        font-family: Calibri;
+        font-size: 15px;
+    }
+    a{
+        color: aliceblue;
+    }
+    .estil{
+        padding-left: 42%;
+    }
