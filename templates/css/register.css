@@ -1,0 +1,51 @@
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        background-image: url("/images/fondo2.jpg");
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+    .mar{
+        margin-left: 27%;
+    }
+    ti{
+        margin-left: 33%;
+        padding-top: 8%;
+        font-size: 40px;
+        font-family: Calibri;
+        color: black;
+    }
+    .container{
+        text-align: center;
+    }
+
+    label.mss{
+        color: black;
+    }
+    h2{
+        font-family: Arial;
+        color: black;
+    }
+    .btn1{
+        background-color: black;
+        border-color: black;
+    }
+    .btn1:hover
+    {
+        background-color: #1E3B67;
+        border-color: #1E3B67;
+    }
+    .btn{
+        background-color: black;
+        border-color: transparent;
+
+    }
+    .btn:hover
+    {
+        background-color: #1E3B67;
+        border-color: transparent;
+    }
