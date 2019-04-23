@@ -33,6 +33,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // serve static files from template
 app.use(express.static(__dirname + '/templates'));
+app.set('view engine', 'ejs');
+
 
 // include routes
 routes(app);

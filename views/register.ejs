@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Registration Form</title>
+    <link href="css/register.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <form th:action="/"  method="get">
+        <button class="btn1 btn-md btn-warning btn-block" type="Submit">Regresar a La Página Principal</button>
+    </form>
+    <br/><br/>
+    <b><ti style="color: black; margin-left: 48%;">Formulario de Registro</ti></b>
+    <br/><br/>
+    <div class="mar">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <form form id="login" action="/user" method="post">
+                    <div class="form-group">
+                        <div class="col-sm-9">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                                <input type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" name="email" placeholder="Email"
+                                    class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-9">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+
+                                <input type="text"  pattern="[A-Za-z]{1,}" name="firstname" placeholder="Nombre"
+                                    class="form-control" />
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-9">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+
+                                <input type="text"  pattern="[A-Za-z]{1,}"  name="lastname" placeholder="Apellido"
+                                    class="form-control" />
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="width: 160px; margin-left: 8em;" class="form-group">
+                        <label>Fecha de nacimiento:</label>
+                        <div class="deta">
+                            <input name="birthday" type="date" pattern="[0-9]{1,}" placeholder="Date"
+                                class="form-control" />
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <div class="col-sm-9">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span>
+                                <input type="text"  pattern="[A-Za-z]{1,}" onchange="try{setCustomValidity('')}catch(e){}"  name="city" placeholder="Ciudad"
+                                    class="form-control" />
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-9">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                <input name="password" type="password"
+                                    placeholder="Contraseña" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-9">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                <input name="passwordConf" type="password"
+                                    placeholder="Repetir Contraseña" class="form-control" />
+                            </div>>
+                        </div>
+                    </div>
+
+                    <div style="padding-left: 12%; padding-right: 15%;" class="form-group">
+                        <div class="col-sm-9">
+                            <button type="submit" class="btn btn-primary btn-block" value="REGISTER">Registrar Usuario</button>
+                        </div>
+                    </div>
+
+                    <span th:utext="${successMessage}"></span>
+
+                    <script>
+                        var input = document.getElementById('username');
+                        input.oninvalid = function(event) {
+                            event.target.setCustomValidity('Tu nombre solo debe contener letras. ej. Juan');
+                        }
+                        var input2 = document.getElementById('lastname');
+                        input2.oninvalid = function(event) {
+                            event.target.setCustomValidity('Tu apellido solo debe contener letras.ej. Bravo');
+                        }
+                        var input3 = document.getElementById('city');
+                        input3.oninvalid = function(event) {
+                            event.target.setCustomValidity('La ciudad debe contener letras.ej. Cbba');
+                        }
+                        var input4 = document.getElementById('email');
+                        input4.oninvalid = function(event) {
+                            event.target.setCustomValidity('Ingresa un correo electronico valido ej. a@gmail.com');
+                        }
+                        var input5 = document.getElementById('date');
+                        input5.oninvalid = function(event) {
+                            event.target.setCustomValidity('Ingresa una fecha de nacimiento valido ej. 01/05/1997');
+                        }
+                    </script>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+
