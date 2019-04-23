@@ -19,19 +19,14 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
-                <form autocomplete="off" action="#" th:action="/register"
-                    th:object="${user}" method="post" class="form-horizontal"
-                    role="form">
-
+                <form form id="login" action="/user" method="post">
                     <div class="form-group">
                         <div class="col-sm-9">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                                <input type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"  onchange="try{setCustomValidity('')}catch(e){}" id="email" th:field="*{email}" placeholder="Email"
+                                <input type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" name="email" placeholder="Email"
                                     class="form-control" />
                             </div>
-                            <label style="color: #C70039;" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"
-                                class="validation-message"></label>
                         </div>
                     </div>
 
@@ -40,7 +35,7 @@
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
 
-                                <input type="text"  pattern="[A-Za-z]{1,}" id="firstname" placeholder="Nombre"
+                                <input type="text"  pattern="[A-Za-z]{1,}" name="firstname" placeholder="Nombre"
                                     class="form-control" />
 
                             </div>
@@ -52,7 +47,7 @@
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
 
-                                <input type="text"  pattern="[A-Za-z]{1,}"  id="lastname" placeholder="Apellido"
+                                <input type="text"  pattern="[A-Za-z]{1,}"  name="lastname" placeholder="Apellido"
                                     class="form-control" />
 
                             </div>
@@ -62,11 +57,9 @@
                     <div style="width: 160px; margin-left: 8em;" class="form-group">
                         <label>Fecha de nacimiento:</label>
                         <div class="deta">
-                            <input type="date" th:field="*{date}" pattern="[0-9]{1,}"  oninvalid="setCustomValidity('Ingresa solo números')" onchange="try{setCustomValidity('')}catch(e){}" placeholder="Date"
+                            <input name="birthday" type="date" pattern="[0-9]{1,}" placeholder="Date"
                                 class="form-control" />
                         </div>
-                        <!--<input type="date" class="form-control" th:field="*{date}"/>-->
-                        <!--<span style="color: red;" th:if="${#fields.hasErrors('date')}" th:errors="*{date}">Errors</span>-->
                     </div>
 
 
@@ -74,12 +67,10 @@
                         <div class="col-sm-9">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span>
-                                <input type="text"  pattern="[A-Za-z]{1,}" onchange="try{setCustomValidity('')}catch(e){}"  id="city" th:field="*{city}" placeholder="Ciudad"
+                                <input type="text"  pattern="[A-Za-z]{1,}" onchange="try{setCustomValidity('')}catch(e){}"  name="city" placeholder="Ciudad"
                                     class="form-control" />
 
                             </div>
-                            <label style="color: #C70039;" th:if="${#fields.hasErrors('city')}" th:errors="*{city}"
-                                class="validation-message"></label>
                         </div>
                     </div>
 
@@ -87,11 +78,9 @@
                         <div class="col-sm-9">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                <input type="password" th:field="*{password}"
+                                <input name="password" type="password"
                                     placeholder="Contraseña" class="form-control" />
                             </div>
-                            <label style="color: #C70039;" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"
-                                    class="validation-message"></label>
                         </div>
                     </div>
 
@@ -99,17 +88,15 @@
                         <div class="col-sm-9">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                <input type="repeatPassword" th:field="*{repeatPassword}"
+                                <input name="passwordConf" type="password"
                                     placeholder="Repetir Contraseña" class="form-control" />
-                            </div>
-                            <label style="color: #C70039;" th:if="${#fields.hasErrors('repeatPassword')}" th:errors="*{repeatPassword}"
-                                    class="validation-message"></label>
+                            </div>>
                         </div>
                     </div>
 
                     <div style="padding-left: 12%; padding-right: 15%;" class="form-group">
                         <div class="col-sm-9">
-                            <button type="submit" class="btn btn-primary btn-block">Registrar Usuario</button>
+                            <button type="submit" class="btn btn-primary btn-block" value="REGISTER">Registrar Usuario</button>
                         </div>
                     </div>
 

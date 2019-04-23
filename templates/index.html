@@ -18,15 +18,15 @@
 	<body>
 		<div class="row">
 			<div class="col-md-7">
-				<form th:action="/login" method="POST" class="form-signin">
+				<form action="/login" method="POST" class="form-signin">
 						<br/>
-						<input type="text" id="email" th:field="*{email}" placeholder="Email"
+						<input type="text" name="email" placeholder="Email"
 						class="form-control" style="width: 350px; length: 100px;"/> <br/>
 
-						<input type="password"  th:placeholder="contraseña"
+						<input type="password"
 							id="password" name="password" placeholder="Contraseña" class="form-control" style="width: 350px; length: 100px;" /> <br />
 					<div class="boton">
-						<button>Iniciar Sesion</button>
+						<button type="submit" value="LOGIN NOW">Iniciar Sesion</button>
 					</div>
 				</form>
 				<div class="bottom text">

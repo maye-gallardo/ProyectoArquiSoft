@@ -56,11 +56,11 @@ exports.deleteUser = (req) => {
 
 exports.updateUser = (req, res, next) =>{
     var userData = this.getUser;
-      if (req.body.email && req.body.password && req.body.passwordConf && req.body.firstname && req.body.lastname && req.body.city && req.body.bornDay) {
+      if (req.body.email && req.body.password && req.body.passwordConf && req.body.firstname && req.body.lastname && req.body.city && req.body.birthday) {
         var userData = {
           email: req.body.email,
           firstname: req.body.firstname,
-          lastname: req.body.firstname,
+          lastname: req.body.lastname,
           city: req.body.city,
           birthday: req.body.birthday,
           password: req.body.password,

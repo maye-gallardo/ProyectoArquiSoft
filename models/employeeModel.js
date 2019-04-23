@@ -18,7 +18,7 @@ var EmployeeSchema = new mongoose.Schema({
   },
   comission: {
     type: Float32Array,
-    required: true, 
+    required: true,
   }
 });
 
