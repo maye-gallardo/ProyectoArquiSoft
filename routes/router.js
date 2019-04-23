@@ -1,5 +1,6 @@
 import user from '../controllers/userController';
 import login from '../controllers/loginController';
+import template from '../controllers/templatesController';
 
 export default (app) => {
     app.route('/login')
@@ -15,9 +16,14 @@ export default (app) => {
         .delete(user.deleteUser);
 
     app.route('/registration')
-        .get(user.registerPage)
-        .post(user.registerPage)
+        .get(template.registerPage)
 
     app.route('/')
-        .get(user.home)
+        .get(template.home)
+
+    app.route('/profileForm')
+        .get(template.profile)
+
+    app.route('/perfil')
+        .get(template.perfil)
 };

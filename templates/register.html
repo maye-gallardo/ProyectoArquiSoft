@@ -40,14 +40,10 @@
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
 
-                                <input type="text"  pattern="[A-Za-z]{1,}" onchange="try{setCustomValidity('')}catch(e){}"  id="username" th:field="*{username}" placeholder="Nombre"
+                                <input type="text"  pattern="[A-Za-z]{1,}" id="firstname" placeholder="Nombre"
                                     class="form-control" />
 
                             </div>
-                            <label th:if="${#fields.hasErrors('username')}" th:errors="*{username}"
-                                class="validation-message"></label>
-                            <label th:if="${message}" th:errors="*{username}"
-                                class="validation-message"></label>
                         </div>
                     </div>
 
@@ -56,12 +52,10 @@
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
 
-                                <input type="text"  pattern="[A-Za-z]{1,}" onchange="try{setCustomValidity('')}catch(e){}"  id="lastname" th:field="*{lastname}" placeholder="Apellido"
+                                <input type="text"  pattern="[A-Za-z]{1,}"  id="lastname" placeholder="Apellido"
                                     class="form-control" />
 
                             </div>
-                            <label style="color: #C70039;" th:if="${#fields.hasErrors('lastname')}" th:errors="*{lastname}"
-                                class="validation-message"></label>
                         </div>
                     </div>
 

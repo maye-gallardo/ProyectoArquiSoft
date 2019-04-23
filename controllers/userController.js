@@ -1,17 +1,5 @@
 var User = require('../models/user');
 
-
-// GET route for reading data
-exports.registerPage = (req, res, next) =>  {
-  return res.sendFile('register.html' , { root : './templates'});
-};
-
-// GET route for reading data
-exports.home = (req, res, next) =>  {
-  return res.sendFile('index.html' , { root : './templates'});
-};
-
-
 exports.getUser = (req, res, next) => {
     User.findById(req.session.userId)
       .exec(function (error, user) {
@@ -38,10 +26,13 @@ exports.createUser = (req, res, next) => {
     return next(err);
   }
 
-  if (req.body.email && req.body.username && req.body.password && req.body.passwordConf) {
+  if (req.body.email && req.body.password && req.body.passwordConf && req.body.firstname && req.body.lastname && req.body.city && req.body.birthday ) {
     var userData = {
       email: req.body.email,
-      username: req.body.username,
+      firstname: req.body.firstname,
+      lastname: req.body.firstname,
+      city: req.body.city,
+      birthday: req.body.birthday,
       password: req.body.password,
     }
     User.create(userData, function (error, user) {
@@ -65,10 +56,13 @@ exports.deleteUser = (req) => {
 
 exports.updateUser = (req, res, next) =>{
     var userData = this.getUser;
-      if (req.body.email && req.body.username && req.body.password) {
-        userData = {
+      if (req.body.email && req.body.password && req.body.passwordConf && req.body.firstname && req.body.lastname && req.body.city && req.body.bornDay) {
+        var userData = {
           email: req.body.email,
-          username: req.body.username,
+          firstname: req.body.firstname,
+          lastname: req.body.firstname,
+          city: req.body.city,
+          birthday: req.body.birthday,
           password: req.body.password,
         }
         User.create(userData, function (error, user) {
