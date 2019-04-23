@@ -35,13 +35,13 @@
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
     
-                                <input type="text"  pattern="[A-Za-z]{1,}" onchange="try{setCustomValidity('')}catch(e){}"  id="username" th:field="*{username}" placeholder="Nombre"
+                                <input type="text"  pattern="[A-Za-z]{1,}" onchange="try{setCustomValidity('')}catch(e){}"  id="firstname" th:field="*{firstname}" placeholder="Nombre"
                                        class="form-control" />
     
                             </div>
-                            <label th:if="${#fields.hasErrors('username')}" th:errors="*{username}"
+                            <label th:if="${#fields.hasErrors('firstname')}" th:errors="*{firstname}"
                                    class="validation-message"></label>
-                            <label th:if="${message}" th:errors="*{username}"
+                            <label th:if="${message}" th:errors="*{firstname}"
                                    class="validation-message"></label>
                         </div>
                     </div>
@@ -61,7 +61,7 @@
                     <div style="width: 160px; margin-left: 8em;" class="form-group">
                         <label>Fecha de nacimiento:</label>
                         <div class="deta">
-                            <input type="date" th:field="*{date}" pattern="[0-9]{1,}"  oninvalid="setCustomValidity('Ingresa solo números')" onchange="try{setCustomValidity('')}catch(e){}" placeholder="Date"
+                            <input id="date" type="date" th:field="*{date}" pattern="[0-9]{1,}"  oninvalid="setCustomValidity('Ingresa solo números')" onchange="try{setCustomValidity('')}catch(e){}" placeholder="Date"
                                    class="form-control" />
                         </div>
                     </div>
@@ -79,24 +79,25 @@
                     <div class="form-group">
                         <div class="col-sm-9">
                             <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span>
-                                <input type="text"  pattern="[A-Za-z]{1,}" onchange="try{setCustomValidity('')}catch(e){}" id="password" th:field="*{password}" placeholder="Contraseña"
-                                       class="form-control" />
-    
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                <input type="password" id="password" th:field="*{password}"
+                                       placeholder="Contraseña" class="form-control" />
                             </div>
                         </div>
                     </div>
+    
+
                     <br/><br/>
                     <div class="form-group">
                         <div class="col-sm-9">
                             <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span>
-                                <input type="text"  pattern="[A-Za-z]{1,}" onchange="try{setCustomValidity('')}catch(e){}" id="password2" th:field="*{password2}" placeholder="Repetir contraseña"
-                                       class="form-control" />
-    
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                <input type="password" id="passwordConf" th:field="*{passwordConf}"
+                                       placeholder="Repetir contraseña" class="form-control" />
                             </div>
                         </div>
                     </div>
+    
                     <br/> <br/> <br/>
                     <div style="padding-left: 12%; padding-right: 15%;" class="form-group">
                         <div class="col-sm-9">
@@ -107,7 +108,7 @@
                     <span th:utext="${successMessage}"></span>
     
                     <script>
-                        var input = document.getElementById('username');
+                        var input = document.getElementById('firstname');
                         input.oninvalid = function(event) {
                             event.target.setCustomValidity('Tu nombre solo debe contener letras. ej. Juan');
                         }
@@ -131,7 +132,7 @@
                         input3.oninvalid = function(event) {
                             event.target.setCustomValidity('Debe ingresar una contraseña');
                         }
-                        var input7 = document.getElementById('password');
+                        var input7 = document.getElementById('passwordConf');
                         input3.oninvalid = function(event) {
                             event.target.setCustomValidity('Debe ingresar nuevamente una contraseña');
                         }
