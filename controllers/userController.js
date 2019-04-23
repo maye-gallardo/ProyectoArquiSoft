@@ -30,7 +30,7 @@ exports.createUser = (req, res, next) => {
     var userData = {
       email: req.body.email,
       firstname: req.body.firstname,
-      lastname: req.body.firstname,
+      lastname: req.body.lastname,
       city: req.body.city,
       date: req.body.date,
       password: req.body.password,

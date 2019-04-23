@@ -19,12 +19,12 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
-                <form form id="login" action="/user" method="post">
+                <form form action="/user" method="post">
                     <div class="form-group">
                         <div class="col-sm-9">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                                <input type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"  onchange="try{setCustomValidity('')}catch(e){}" id="email" th:field="*{email}" placeholder="Email"
+                                <input type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"  onchange="try{setCustomValidity('')}catch(e){}" id="email" name="email" th:field="*{email}" placeholder="Email"
                                        class="form-control" />
                             </div>
                         </div>
@@ -35,7 +35,7 @@
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
     
-                                <input type="text"  pattern="[A-Za-z]{1,}" onchange="try{setCustomValidity('')}catch(e){}"  id="firstname" th:field="*{firstname}" placeholder="Nombre"
+                                <input type="text"  pattern="[A-Za-z]{1,}" onchange="try{setCustomValidity('')}catch(e){}"  id="firstname" name="firstname" th:field="*{firstname}" placeholder="Nombre"
                                        class="form-control" />
     
                             </div>
@@ -51,7 +51,7 @@
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
     
-                                <input type="text"  pattern="[A-Za-z]{1,}" onchange="try{setCustomValidity('')}catch(e){}"  id="lastname" th:field="*{lastname}" placeholder="Apellido"
+                                <input type="text"  pattern="[A-Za-z]{1,}" onchange="try{setCustomValidity('')}catch(e){}"  id="lastname" name="lastname" th:field="*{lastname}" placeholder="Apellido"
                                        class="form-control" />
     
                             </div>
@@ -61,7 +61,7 @@
                     <div style="width: 160px; margin-left: 8em;" class="form-group">
                         <label>Fecha de nacimiento:</label>
                         <div class="deta">
-                            <input id="date" type="date" th:field="*{date}" pattern="[0-9]{1,}"  oninvalid="setCustomValidity('Ingresa solo números')" onchange="try{setCustomValidity('')}catch(e){}" placeholder="Date"
+                            <input id="date" name="date" type="date" th:field="*{date}" pattern="[0-9]{1,}"  oninvalid="setCustomValidity('Ingresa solo números')" onchange="try{setCustomValidity('')}catch(e){}" placeholder="Date"
                                    class="form-control" />
                         </div>
                     </div>
@@ -69,7 +69,7 @@
                         <div class="col-sm-9">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span>
-                                <input type="text"  pattern="[A-Za-z]{1,}" onchange="try{setCustomValidity('')}catch(e){}"  id="city" th:field="*{city}" placeholder="Ciudad"
+                                <input type="text"  pattern="[A-Za-z]{1,}" onchange="try{setCustomValidity('')}catch(e){}"  id="city" name="city" th:field="*{city}" placeholder="Ciudad"
                                        class="form-control" />
     
                             </div>
@@ -80,7 +80,7 @@
                         <div class="col-sm-9">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                <input type="password" id="password" th:field="*{password}"
+                                <input type="password" id="password" name="password" th:field="*{password}"
                                        placeholder="Contraseña" class="form-control" />
                             </div>
                         </div>
@@ -92,7 +92,7 @@
                         <div class="col-sm-9">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                <input type="password" id="passwordConf" th:field="*{passwordConf}"
+                                <input type="password" id="passwordConf" name="passwordConf" th:field="*{passwordConf}"
                                        placeholder="Repetir contraseña" class="form-control" />
                             </div>
                         </div>
