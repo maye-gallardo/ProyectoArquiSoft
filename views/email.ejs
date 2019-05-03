@@ -4,7 +4,6 @@
       xmlns:mvc="http://www.springframework.org/schema/mvc">
 
 <head>
-    <title>Generar boleta</title>
 	<mvc:resources mapping="/webjars/**" location="/webjars/"/>
 	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -12,25 +11,29 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
-<section>
+<body>
+    <h2 style="margin-left: 44%; margin-top:13%;">Enviar un correo</h2>
+    <br/>
+    <section >
     <div class="container">
-        <div class="row">
-            <div class="col-md-6 mb-5">
+        <div class="row justify-content-center align-items">
+            <div class="col-md-6">
                 <form action="/email" method="POST" class="form-signin">
                     <div class = " form-group ">
-                            <label for="idInCE"> Correo Electrónico </label>
+                            <strong><label for="idInCE"> Correo Electrónico: </label></strong>
                             <input type="email" class="form-control" id="correo" name="correo" placeholder="name@example.com">
                         </div>
                         <div class="form-group">
-                            <label for="idInMen">Cuentanos mas</label>
+                            <strong><label for="idInMen">Texto:</label></strong>
                             <textarea id="mensaje" name="mensaje" class="form-control" rows="4"></textarea>
                         </div>
-					<div class="boton">
-						<button type="submit" value="LOGIN NOW">Iniciar Sesion</button>
-					</div>
+                        <div class="boton" style="margin-left: 30%;">
+                                <button type="submit" value="LOGIN NOW">Enviar</button>
+                        </div>
 				</form>
             </div>
         </div>
     </div>
 </section>
+</body>
 </html>
