@@ -61,7 +61,7 @@
                     <div style="width: 160px; margin-left: 8em;" class="form-group">
                         <label>Fecha de nacimiento:</label>
                         <div class="deta">
-                            <input id="fecha" name="fecha" type="fecha" th:field="*{fecha}" pattern="[0-9]{1,}"  oninvalid="setCustomValidity('Ingresa solo números')" onchange="try{setCustomValidity('')}catch(e){}" placeholder="fecha"
+                            <input id="fecha" name="fecha" type="date" th:field="*{fecha}" pattern="[0-9]{1,}"  oninvalid="setCustomValidity('Ingresa solo números')" onchange="try{setCustomValidity('')}catch(e){}" placeholder="fecha"
                                    class="form-control" />
                         </div>
                     </div>
@@ -80,7 +80,7 @@
                         <div class="col-sm-9">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                <input type="contrasenia" id="contrasenia" name="contrasenia" th:field="*{contrasenia}"
+                                <input type="password" id="contrasenia" name="contrasenia" th:field="*{contrasenia}"
                                        placeholder="Contraseña" class="form-control" />
                             </div>
                         </div>
@@ -92,7 +92,7 @@
                         <div class="col-sm-9">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                <input type="contrasenia" id="contraseniaConf" name="contraseniaConf" th:field="*{contraseniaConf}"
+                                <input type="password" id="contraseniaConf" name="contraseniaConf" th:field="*{contraseniaConf}"
                                        placeholder="Repetir contraseña" class="form-control" />
                             </div>
                         </div>
