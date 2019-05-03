@@ -17,7 +17,7 @@ exports.obtenerUsuario = (req, res, next) => {
       });
 };
 
-exports.createUser = (req, res, next) => {
+exports.crearUsuario = (req, res, next) => {
 
   if (req.body.contrasenia !== req.body.contraseniaConf) {
     var err = new Error('contrasenias do not match.');
@@ -50,11 +50,11 @@ exports.createUser = (req, res, next) => {
   }
 };
 
-exports.deleteUser = (req) => {
+exports.eliminarUsuario = (req) => {
     User.remove(req.session.userId);
 };
 
-exports.upfechaUser = (req, res, next) =>{
+exports.actualizarUsuario = (req, res, next) =>{
     var userData = this.obtenerUsuario;
       if (req.body.email && req.body.contrasenia && req.body.contraseniaConf && req.body.nombre && req.body.apellido && req.body.ciudad && req.body.fecha) {
         var userData = {

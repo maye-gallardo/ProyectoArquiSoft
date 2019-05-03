@@ -12,9 +12,9 @@ export default (app) => {
 
     app.route('/user')
         .get(user.obtenerUsuario)
-        .post(user.createUser)
-        .put(user.upfechaUser)
-        .delete(user.deleteUser);
+        .post(user.crearUsuario)
+        .put(user.actualizarUsuario)
+        .delete(user.eliminarUsuario);
 
     app.route('/registration')
         .get(views.registerPage);
