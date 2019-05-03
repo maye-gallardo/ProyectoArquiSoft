@@ -1,6 +1,7 @@
 import user from '../controllers/userController';
 import login from '../controllers/loginController';
 import views from '../controllers/viewsController';
+import email from '../controllers/emailController';
 
 export default (app) => {
     app.route('/login')
@@ -16,14 +17,18 @@ export default (app) => {
         .delete(user.deleteUser);
 
     app.route('/registration')
-        .get(views.registerPage)
+        .get(views.registerPage);
 
     app.route('/')
-        .get(views.home)
+        .get(views.home);
 
     app.route('/profileForm')
-        .get(views.profile)
+        .get(views.profile);
 
     app.route('/perfil')
-        .get(views.perfil)
+        .get(views.perfil);
+
+    app.route('/email')
+        .get(views.email)
+        .post(email.sendEmail);
 };

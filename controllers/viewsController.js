@@ -30,4 +30,9 @@ exports.perfil = (req, res, next) =>  {
         }
       });
 };
+
+// GET route for reading data
+exports.email = (req, res, next) =>  {
+    return res.render('email.ejs');
+};
   
