@@ -33,14 +33,14 @@ exports.createUser = (req, res, next) => {
       lastname: req.body.lastname,
       city: req.body.city,
       date: req.body.date,
-      password: req.body.password,
+      password: req.body.password
     }
     User.create(userData, function (error, user) {
       if (error) {
         return next(error);
       } else {
         req.session.userId = user._id;
-        return res.redirect('/profile');
+        return res.redirect('/perfil');
       }
     });
   } else {
@@ -70,7 +70,7 @@ exports.updateUser = (req, res, next) =>{
             return next(error);
           } else {
             req.session.userId = user._id;
-            return res.redirect('/profile');
+            return res.redirect('/perfil');
           }
         });
       } else {

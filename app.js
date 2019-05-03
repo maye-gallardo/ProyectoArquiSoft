@@ -7,7 +7,7 @@ var MongoStore = require('connect-mongo')(session);
 import routes from './routes/router.js';
 
 //connect to MongoDB
-mongoose.connect('mongodb://localhost/testForAuth');
+mongoose.connect('mongodb://localhost/generadorDeBoletas');
 var db = mongoose.connection;
 
 //handle mongo error
