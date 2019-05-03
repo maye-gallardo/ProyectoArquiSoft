@@ -35,13 +35,13 @@
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
     
-                                <input type="text"  pattern="[A-Za-z]{1,}" onchange="try{setCustomValidity('')}catch(e){}"  id="firstname" name="firstname" th:field="*{firstname}" placeholder="Nombre"
+                                <input type="text"  pattern="[A-Za-z]{1,}" onchange="try{setCustomValidity('')}catch(e){}"  id="nombre" name="nombre" th:field="*{nombre}" placeholder="Nombre"
                                        class="form-control" />
     
                             </div>
-                            <label th:if="${#fields.hasErrors('firstname')}" th:errors="*{firstname}"
+                            <label th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"
                                    class="validation-message"></label>
-                            <label th:if="${message}" th:errors="*{firstname}"
+                            <label th:if="${message}" th:errors="*{nombre}"
                                    class="validation-message"></label>
                         </div>
                     </div>
@@ -51,7 +51,7 @@
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
     
-                                <input type="text"  pattern="[A-Za-z]{1,}" onchange="try{setCustomValidity('')}catch(e){}"  id="lastname" name="lastname" th:field="*{lastname}" placeholder="Apellido"
+                                <input type="text"  pattern="[A-Za-z]{1,}" onchange="try{setCustomValidity('')}catch(e){}"  id="apellido" name="apellido" th:field="*{apellido}" placeholder="Apellido"
                                        class="form-control" />
     
                             </div>
@@ -108,11 +108,11 @@
                     <span th:utext="${successMessage}"></span>
     
                     <script>
-                        var input = document.getElementById('firstname');
+                        var input = document.getElementById('nombre');
                         input.oninvalid = function(event) {
                             event.target.setCustomValidity('Tu nombre solo debe contener letras. ej. Juan');
                         }
-                        var input2 = document.getElementById('lastname');
+                        var input2 = document.getElementById('apellido');
                         input2.oninvalid = function(event) {
                             event.target.setCustomValidity('Tu apellido solo debe contener letras.ej. Bravo');
                         }
