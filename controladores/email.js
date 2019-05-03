@@ -2,7 +2,7 @@ const servirEmail = require('../src/EmailSender');
 
 const Email = new servirEmail();
 
-exports.sendEmail = (req, res, next) => {
+exports.enviarEmail = (req, res, next) => {
     let email ={
         from:"GeneradorDeBoletas@enterprise.com",
         to: req.body.correo,

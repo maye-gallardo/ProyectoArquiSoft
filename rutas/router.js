@@ -30,7 +30,7 @@ export default (app) => {
 
     app.route('/email')
         .get(views.email)
-        .post(email.sendEmail);
+        .post(email.enviarEmail);
     
     app.route('/boleta')
         .get(views.boleta)
