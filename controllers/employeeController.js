@@ -43,7 +43,7 @@ exports.deleteEmployee = (req) => {
     User.remove(req.body.employeeId);
 };
 
-exports.upfechaEmployee = (req, res, next) =>{
+exports.updateEmployee = (req, res, next) =>{
     if (req.body.user && req.body.balance && req.body.type && req.body.comission) {
         var employeeData = {
           user: req.body.user,
