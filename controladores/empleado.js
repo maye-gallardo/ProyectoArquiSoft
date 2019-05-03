@@ -1,6 +1,6 @@
 var employee = require('../modelos/empleado');
 
-exports.getEmployee = (req, res, next) => {
+exports.obtenerEmpleado = (req, res, next) => {
     employee.findById(req.body.employeeId)
       .exec(function (error, employee) {
         if (error) {
@@ -17,7 +17,7 @@ exports.getEmployee = (req, res, next) => {
       });
 };
 
-exports.createEmployee = (req, res, next) => {
+exports.crearEmpleado = (req, res, next) => {
   if (req.body.user && req.body.saldo && req.body.tipo && req.body.comision) {
     var employeeData = {
       user: req.body.user,
@@ -39,11 +39,11 @@ exports.createEmployee = (req, res, next) => {
   }
 };
 
-exports.deleteEmployee = (req) => {
+exports.eliminarEmpleado = (req) => {
     User.remove(req.body.employeeId);
 };
 
-exports.updateEmployee = (req, res, next) =>{
+exports.actualizarEmpleado = (req, res, next) =>{
     if (req.body.user && req.body.saldo && req.body.tipo && req.body.comision) {
         var employeeData = {
           user: req.body.user,

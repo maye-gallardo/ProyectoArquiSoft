@@ -17,24 +17,41 @@ exports.obtenerUsuario = (req, res, next) => {
       });
 };
 
-exports.crearUsuario = (req, res, next) => {
-
-  if (req.body.contrasenia !== req.body.contraseniaConf) {
+function compararContrasenias(body){
+  if (body.contrasenia !== body.contraseniaConf) {
     var err = new Error('contrasenias do not match.');
     err.status = 400;
     res.send("contrasenias dont match");
     return next(err);
   }
+}
 
-  if (req.body.email && req.body.contrasenia && req.body.contraseniaConf && req.body.nombre && req.body.apellido && req.body.ciudad && req.body.fecha ) {
-    var userData = {
-      email: req.body.email,
-      nombre: req.body.nombre,
-      apellido: req.body.apellido,
-      ciudad: req.body.ciudad,
-      fecha: req.body.fecha,
-      contrasenia: req.body.contrasenia,
-    }
+function modelarUsuario(body){
+  var userData = {
+    email: body.email,
+    nombre: body.nombre,
+    apellido: body.apellido,
+    ciudad: body.ciudad,
+    fecha: body.fecha,
+    contrasenia: body.contrasenia,
+  }
+  return userData;
+}
+
+function cumpleTodosLosRequisitos(body, next){
+  if (body.email && body.contrasenia && body.contraseniaConf && body.nombre && body.apellido && body.ciudad && body.fecha ) {
+    return true;
+  } else {
+    var err = new Error('All fields required.');
+    err.status = 400;
+    return next(err);
+  }
+}
+
+exports.crearUsuario = (req, res, next) => {
+  compararContrasenias(req.body);
+  if (cumpleTodosLosRequisitos(req.body , next)) {
+    var userData = modelarUsuario(req.body);
     User.create(userData, function (error, user) {
       if (error) {
         return next(error);
@@ -43,11 +60,7 @@ exports.crearUsuario = (req, res, next) => {
         return res.redirect('/perfil');
       }
     });
-  } else {
-    var err = new Error('All fields required.');
-    err.status = 400;
-    return next(err);
-  }
+  } 
 };
 
 exports.eliminarUsuario = (req) => {
@@ -56,26 +69,15 @@ exports.eliminarUsuario = (req) => {
 
 exports.actualizarUsuario = (req, res, next) =>{
     var userData = this.obtenerUsuario;
-      if (req.body.email && req.body.contrasenia && req.body.contraseniaConf && req.body.nombre && req.body.apellido && req.body.ciudad && req.body.fecha) {
-        var userData = {
-          email: req.body.email,
-          nombre: req.body.nombre,
-          apellido: req.body.apellido,
-          ciudad: req.body.ciudad,
-          fecha: req.body.fecha,
-          contrasenia: req.body.contrasenia,
+    if (cumpleTodosLosRequisitos(req.body , next)) {
+      var userData = modelarUsuario(req.body);
+      User.create(userData, function (error, user) {
+        if (error) {
+          return next(error);
+        } else {
+          req.session.userId = user._id;
+          return res.redirect('/perfil');
         }
-        User.create(userData, function (error, user) {
-          if (error) {
-            return next(error);
-          } else {
-            req.session.userId = user._id;
-            return res.redirect('/perfil');
-          }
-        });
-      } else {
-        var err = new Error('All fields required.');
-        err.status = 400;
-        return next(err);
-      }
+      });
+    } 
 };
