@@ -33,17 +33,15 @@
 <div class="row">
     <u><h1>Perfil</h1></u>
     <br/>
-    <b>Nombre:</b> <a th:text="${user.username}"></a>
+    <b>Nombre:</b> <a><%= user.firstname %></a>
     <br/><br/>
-    <b>Apellido: </b><a th:text="${user.lastname}"></a>
+    <b>Apellido: </b><a><%= user.lastname %></a>
     <br/><br/>
-    <b>Email: </b><a th:text="${user.email}"></a>
+    <b>Email: </b><a><%= user.email %></a>
     <br/><br/>
-    <b>Fecha de Nacimiento:</b> <a th:text="${user.date}"></a>
+    <b>Fecha de Nacimiento:</b> <a><%= user.date %></a>
     <br/><br/>
-    <b>Ciudad: </b><a th:text="${user.city}"></a>
-    <br/><br/>
-    <b>Direccion:</b> <a th:text="${user.direc}"></a>
+    <b>Ciudad: </b><a><%= user.city %></a>
     <br/><br/>
 </div>
 <div class="centrar">
