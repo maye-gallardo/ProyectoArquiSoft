@@ -18,6 +18,6 @@ describe("TarjetaVenta", function() {
       let empleado = new Empleado("Pepito Gonzalez", 500, "COMISION", 0.2);
       let tarjeta = new TarjetaVenta("15/03/2019", 500)
       let tarjetas = [tarjeta,tarjeta,tarjeta];
-      expect(empleado.esValidoRecibirSalario(new Date('2019-06-14T03:24:00'))).equal(true);
+      expect(empleado.esValidoRecibirSalario(new fecha('2019-06-14T03:24:00'))).equal(true);
     });
 });

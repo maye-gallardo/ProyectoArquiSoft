@@ -1,9 +1,9 @@
 export class CalculadorFechaParcial{
-    obtenerFecha(date){
-        return date.getDay();
+    obtenerFecha(fecha){
+        return fecha.getDay();
     }
-    verificarFecha(date){
-        if (this.obtenerFecha(date)==5){
+    verificarFecha(fecha){
+        if (this.obtenerFecha(fecha)==5){
             return true;
         }
         else{

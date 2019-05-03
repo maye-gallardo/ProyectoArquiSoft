@@ -19,7 +19,7 @@ export class UserService {
         return this.http.post(`/users/register`, user);
     }
 
-    update(user: User) {
+    upfecha(user: User) {
         return this.http.put(`/users/` + user.id, user);
     }
 

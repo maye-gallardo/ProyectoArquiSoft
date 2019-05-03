@@ -14,7 +14,7 @@ export class Empleado{
     calcularSalario(tarjetas){
         return this.identificarTipoDeEmpleado(tarjetas).calcularMonto();
     }
-    esValidoRecibirSalario(date){
-        return new CalculadorFecha().estaEsLaFechaDePaga(this.tipo, date);
+    esValidoRecibirSalario(fecha){
+        return new CalculadorFecha().estaEsLaFechaDePaga(this.tipo, fecha);
     }
 }

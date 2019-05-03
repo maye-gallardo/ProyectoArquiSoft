@@ -10,11 +10,11 @@ var UserSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  date: {
-    type: Date,
+  fecha: {
+    type: fecha,
     required: true
   },
-  city: {
+  ciudad: {
     type: String,
     required: true
   },

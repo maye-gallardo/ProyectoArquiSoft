@@ -26,13 +26,13 @@ exports.createUser = (req, res, next) => {
     return next(err);
   }
 
-  if (req.body.email && req.body.contrasenia && req.body.contraseniaConf && req.body.nombre && req.body.apellido && req.body.city && req.body.date ) {
+  if (req.body.email && req.body.contrasenia && req.body.contraseniaConf && req.body.nombre && req.body.apellido && req.body.ciudad && req.body.fecha ) {
     var userData = {
       email: req.body.email,
       nombre: req.body.nombre,
       apellido: req.body.apellido,
-      city: req.body.city,
-      date: req.body.date,
+      ciudad: req.body.ciudad,
+      fecha: req.body.fecha,
       contrasenia: req.body.contrasenia,
     }
     User.create(userData, function (error, user) {
@@ -54,15 +54,15 @@ exports.deleteUser = (req) => {
     User.remove(req.session.userId);
 };
 
-exports.updateUser = (req, res, next) =>{
+exports.upfechaUser = (req, res, next) =>{
     var userData = this.getUser;
-      if (req.body.email && req.body.contrasenia && req.body.contraseniaConf && req.body.nombre && req.body.apellido && req.body.city && req.body.date) {
+      if (req.body.email && req.body.contrasenia && req.body.contraseniaConf && req.body.nombre && req.body.apellido && req.body.ciudad && req.body.fecha) {
         var userData = {
           email: req.body.email,
           nombre: req.body.nombre,
           apellido: req.body.apellido,
-          city: req.body.city,
-          date: req.body.date,
+          ciudad: req.body.ciudad,
+          fecha: req.body.fecha,
           contrasenia: req.body.contrasenia,
         }
         User.create(userData, function (error, user) {

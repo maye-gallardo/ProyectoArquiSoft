@@ -13,7 +13,7 @@ export default (app) => {
     app.route('/user')
         .get(user.getUser)
         .post(user.createUser)
-        .put(user.updateUser)
+        .put(user.upfechaUser)
         .delete(user.deleteUser);
 
     app.route('/registration')
