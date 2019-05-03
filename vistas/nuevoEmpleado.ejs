@@ -6,7 +6,7 @@
 <head>
     <title>Generar boleta</title>
 	<mvc:resources mapping="/webjars/**" location="/webjars/"/>
-	<link href="css/boleta.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="css/nuevoEmpleado.css" rel="stylesheet" type="text/css" media="all" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -34,17 +34,15 @@
 <br/><br/>
 <form action="/nuevoEmpleado" method="GET" class="form-signin"></form>
     <div class="row">
-        <u><h1>Nuevo Empleado</h1></u>
+        <u><h1>Datos Empleado</h1></u>
         <br/>
-        <b>Nombre:</b> <a th:text="${user.username}"></a>
+        <b>Nombre:</b> <a th:text="${user.usuario}"></a>
         <br/><br/>
-        <b>Email: </b><a th:text="${user.email}"></a>
+        <b>Saldo: </b><a th:text="${user.saldo}"></a>
         <br/><br/>
-        <b>Fecha de pago:</b> <a th:text="${user.fecha}"></a>
+        <b>Tipo: </b><a th:text="${user.tipo}"></a>
         <br/><br/>
-        <b>Ciudad: </b><a th:text="${user.ciudad}"></a>
-        <br/><br/>
-        <b>Monto:</b> <a></a>
+        <b>Comision: </b><a th:text="${user.comision}"></a>
         <br/><br/><br/>
     </div>
     <div class="centrar">
