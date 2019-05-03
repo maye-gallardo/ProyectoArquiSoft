@@ -1,15 +1,15 @@
 export class CalculadorFechaComision{
-    obtenerDia(date){
-        return date.getDay();
+    obtenerDia(fecha){
+        return fecha.getDay();
     }
-    obtenerMes(date){
-        return date.getDate();
+    obtenerMes(fecha){
+        return fecha.getfecha();
     }
-    esSegundoViernes(date){
-        return (this.obtenerDia(date)==5)&&(this.obtenerMes(date)==14||this.obtenerMes(date)==28);
+    esSegundoViernes(fecha){
+        return (this.obtenerDia(fecha)==5)&&(this.obtenerMes(fecha)==14||this.obtenerMes(fecha)==28);
     }
-    verificarFecha(date){
-        if (this.esSegundoViernes(date)){
+    verificarFecha(fecha){
+        if (this.esSegundoViernes(fecha)){
             return true;
         }
         else{

@@ -1,10 +1,10 @@
 
-//show password
+//show contrasenia
 $(document).ready(function(){
     $("#pw").focus(function(){
         this.type = "text";
     }).blur(function(){
-        this.type = "password";
+        this.type = "contrasenia";
     })   
 });
 
@@ -16,16 +16,16 @@ $(function() {
             var i = $(this);
             if(i.val() == i.attr('placeholder')) {
                 i.val('').removeClass('placeholder');
-                if(i.hasClass('password')) {
-                    i.removeClass('password');
-                    this.type='password';
+                if(i.hasClass('contrasenia')) {
+                    i.removeClass('contrasenia');
+                    this.type='contrasenia';
                 }           
             }
         }).blur(function() {
             var i = $(this);    
             if(i.val() == '' || i.val() == i.attr('placeholder')) {
-                if(this.type=='password') {
-                    i.addClass('password');
+                if(this.type=='contrasenia') {
+                    i.addClass('contrasenia');
                     this.type='text';
                 }
                 i.addClass('placeholder').val(i.attr('placeholder'));

@@ -1,6 +1,6 @@
 var User = require('../models/user');
 
-exports.getUser = (req, res, next) => {
+exports.obtenerUsuario = (req, res, next) => {
     User.findById(req.session.userId)
       .exec(function (error, user) {
         if (error) {
@@ -19,21 +19,21 @@ exports.getUser = (req, res, next) => {
 
 exports.createUser = (req, res, next) => {
 
-  if (req.body.password !== req.body.passwordConf) {
-    var err = new Error('Passwords do not match.');
+  if (req.body.contrasenia !== req.body.contraseniaConf) {
+    var err = new Error('contrasenias do not match.');
     err.status = 400;
-    res.send("passwords dont match");
+    res.send("contrasenias dont match");
     return next(err);
   }
 
-  if (req.body.email && req.body.password && req.body.passwordConf && req.body.firstname && req.body.lastname && req.body.city && req.body.date ) {
+  if (req.body.email && req.body.contrasenia && req.body.contraseniaConf && req.body.nombre && req.body.apellido && req.body.ciudad && req.body.fecha ) {
     var userData = {
       email: req.body.email,
-      firstname: req.body.firstname,
-      lastname: req.body.lastname,
-      city: req.body.city,
-      date: req.body.date,
-      password: req.body.password
+      nombre: req.body.nombre,
+      apellido: req.body.apellido,
+      ciudad: req.body.ciudad,
+      fecha: req.body.fecha,
+      contrasenia: req.body.contrasenia,
     }
     User.create(userData, function (error, user) {
       if (error) {
@@ -54,16 +54,16 @@ exports.deleteUser = (req) => {
     User.remove(req.session.userId);
 };
 
-exports.updateUser = (req, res, next) =>{
-    var userData = this.getUser;
-      if (req.body.email && req.body.password && req.body.passwordConf && req.body.firstname && req.body.lastname && req.body.city && req.body.date) {
+exports.upfechaUser = (req, res, next) =>{
+    var userData = this.obtenerUsuario;
+      if (req.body.email && req.body.contrasenia && req.body.contraseniaConf && req.body.nombre && req.body.apellido && req.body.ciudad && req.body.fecha) {
         var userData = {
           email: req.body.email,
-          firstname: req.body.firstname,
-          lastname: req.body.lastname,
-          city: req.body.city,
-          date: req.body.date,
-          password: req.body.password,
+          nombre: req.body.nombre,
+          apellido: req.body.apellido,
+          ciudad: req.body.ciudad,
+          fecha: req.body.fecha,
+          contrasenia: req.body.contrasenia,
         }
         User.create(userData, function (error, user) {
           if (error) {

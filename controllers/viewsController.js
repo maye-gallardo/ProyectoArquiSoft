@@ -35,4 +35,9 @@ exports.perfil = (req, res, next) =>  {
 exports.email = (req, res, next) =>  {
     return res.render('email.ejs');
 };
+
+// GET route for reading data
+exports.boleta = (req, res, next) =>  {
+    return res.render('boleta.ejs');
+};
   

@@ -1,15 +1,15 @@
 export class CalculadorFechaFijo{
-    obtenerDia(date){
-        return date.getDay();
+    obtenerDia(fecha){
+        return fecha.getDay();
     }
-    obtenerMes(date){
-        return date.getDate();
+    obtenerMes(fecha){
+        return fecha.getfecha();
     }
-    esUltimoViernesDelMes(date){
-        return (this.obtenerDia(date)==5)&&(this.obtenerMes(date)>24);
+    esUltimoViernesDelMes(fecha){
+        return (this.obtenerDia(fecha)==5)&&(this.obtenerMes(fecha)>24);
     }
-    verificarFecha(date){
-        if (this.esUltimoViernesDelMes(date)){
+    verificarFecha(fecha){
+        if (this.esUltimoViernesDelMes(fecha)){
             return true;
         }
         else{

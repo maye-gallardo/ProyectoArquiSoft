@@ -35,8 +35,8 @@
         <input type="hidden" th:field="*{id}"/>
         <input type="hidden" th:field="*{roles}"/>
         <input type="hidden" th:field="*{email}"/>
-        <input type="hidden" th:field="*{password}"/>
-        <input type="hidden" th:field="*{passwordConfirm}"/>
+        <input type="hidden" th:field="*{contrasenia}"/>
+        <input type="hidden" th:field="*{contraseniaConfirm}"/>
         <div class="estil">
             <div style="width: 200px;" class="form-group">
                 <label>Nombre:</label>
@@ -46,20 +46,20 @@
 
             <div style="width: 200px;" class="form-group">
                 <label>Apellido:</label>
-                <input type="text" class="form-control" th:field="*{lastname}"/>
-                <span style="color: red;" th:if="${#fields.hasErrors('lastname')}" th:errors="*{lastname}">Errors</span>
+                <input type="text" class="form-control" th:field="*{apellido}"/>
+                <span style="color: red;" th:if="${#fields.hasErrors('apellido')}" th:errors="*{apellido}">Errors</span>
             </div>
 
             <div style="width: 150px;" class="form-group">
                 <label>Fecha de nacimiento:</label>
-                <input type="date" class="form-control" th:field="*{date}"/>
-                <span style="color: red;" th:if="${#fields.hasErrors('date')}" th:errors="*{date}">Errors</span>
+                <input type="fecha" class="form-control" th:field="*{fecha}"/>
+                <span style="color: red;" th:if="${#fields.hasErrors('fecha')}" th:errors="*{fecha}">Errors</span>
             </div>
 
             <div style="width: 200px;" class="form-group">
                 <label>Ciudad:</label>
-                <input type="text" class="form-control" th:field="*{city}"/>
-                <span style="color: red;" th:if="${#fields.hasErrors('city')}" th:errors="*{city}">Errors</span>
+                <input type="text" class="form-control" th:field="*{ciudad}"/>
+                <span style="color: red;" th:if="${#fields.hasErrors('ciudad')}" th:errors="*{ciudad}">Errors</span>
             </div>
 
             <div style="width: 200px;" class="form-group">

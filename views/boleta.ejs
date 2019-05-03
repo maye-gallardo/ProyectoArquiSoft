@@ -6,7 +6,7 @@
 <head>
     <title>Generar boleta</title>
 	<mvc:resources mapping="/webjars/**" location="/webjars/"/>
-	<link href="css/profile.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="css/boleta.css" rel="stylesheet" type="text/css" media="all" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -30,35 +30,27 @@
         </div>
     </div>
 </nav>
-<div class="row">
-    <u><h1>Perfil</h1></u>
-    <br/>
-    <b>Nombre:</b> <a><%= user.firstname %></a>
-    <br/><br/>
-<<<<<<< HEAD
-    <b>Apellido: </b><a><%= user.lastname %></a>
-=======
-    <b>Apellido: </b><a th:text="${user.apellido}"></a>
->>>>>>> ebadda5f73700195be0df33d081df2d08a3e183f
-    <br/><br/>
-    <b>Email: </b><a><%= user.email %></a>
-    <br/><br/>
-<<<<<<< HEAD
-    <b>Fecha de Nacimiento:</b> <a><%= user.date %></a>
-    <br/><br/>
-    <b>Ciudad: </b><a><%= user.city %></a>
-=======
-    <b>Fecha de Nacimiento:</b> <a th:text="${user.fecha}"></a>
-    <br/><br/>
-    <b>Ciudad: </b><a th:text="${user.ciudad}"></a>
-    <br/><br/>
-    <b>Direccion:</b> <a th:text="${user.direc}"></a>
->>>>>>> ebadda5f73700195be0df33d081df2d08a3e183f
-    <br/><br/>
-</div>
-<div class="centrar">
-    <a style="background-color: #086A87; color: aliceblue;" class="btn btn-default" th:href="${ '/histories'}">Volver</a>
-    <a style="background-color: #086A87; color: aliceblue;" class="btn btn-default" href="/edit/user/profile">Editar</a>
+<form action="/boleta" method="GET" class="form-signin"></form>
+    <div class="row">
+        <u><h1>Perfil</h1></u>
+        <br/>
+        <b>Nombre:</b> <a th:text="${user.username}"></a>
+        <br/><br/>
+        <b>Apellido: </b><a th:text="${user.apellido}"></a>
+        <br/><br/>
+        <b>Email: </b><a th:text="${user.email}"></a>
+        <br/><br/>
+        <b>Fecha de Nacimiento:</b> <a th:text="${user.fecha}"></a>
+        <br/><br/>
+        <b>Ciudad: </b><a th:text="${user.ciudad}"></a>
+        <br/><br/>
+        <b>Direccion:</b> <a th:text="${user.direc}"></a>
+        <br/><br/>
+    </div>
+    <div class="centrar">
+        <a style="background-color: #086A87; color: aliceblue;" class="btn btn-default" th:href="${ '/histories'}">Volver</a>
+        <a style="background-color: #086A87; color: aliceblue;" class="btn btn-default" href="/edit/user/profile">Editar</a>
+    </div>
 </div>
 </body>
 </html>

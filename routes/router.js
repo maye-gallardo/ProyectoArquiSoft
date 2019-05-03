@@ -11,9 +11,9 @@ export default (app) => {
         .get(login.logout); 
 
     app.route('/user')
-        .get(user.getUser)
+        .get(user.obtenerUsuario)
         .post(user.createUser)
-        .put(user.updateUser)
+        .put(user.upfechaUser)
         .delete(user.deleteUser);
 
     app.route('/registration')
@@ -31,4 +31,7 @@ export default (app) => {
     app.route('/email')
         .get(views.email)
         .post(email.sendEmail);
+    
+    app.route('/boleta')
+        .get(views.boleta)
 };

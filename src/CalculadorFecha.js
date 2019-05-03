@@ -17,7 +17,7 @@ export class CalculadorFecha{
             return new CalculadorFechaComision();
         }
     }
-    estaEsLaFechaDePaga(tipo, date){
-        return this.identificarTipoDeEmpleado(tipo).verificarFecha(date);
+    estaEsLaFechaDePaga(tipo, fecha){
+        return this.identificarTipoDeEmpleado(tipo).verificarFecha(fecha);
     }
 }
