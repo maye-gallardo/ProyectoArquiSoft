@@ -1,6 +1,6 @@
 var User = require('../models/user');
 
-exports.getUser = (req, res, next) => {
+exports.obtenerUsuario = (req, res, next) => {
     User.findById(req.session.userId)
       .exec(function (error, user) {
         if (error) {
@@ -55,7 +55,7 @@ exports.deleteUser = (req) => {
 };
 
 exports.upfechaUser = (req, res, next) =>{
-    var userData = this.getUser;
+    var userData = this.obtenerUsuario;
       if (req.body.email && req.body.contrasenia && req.body.contraseniaConf && req.body.nombre && req.body.apellido && req.body.ciudad && req.body.fecha) {
         var userData = {
           email: req.body.email,

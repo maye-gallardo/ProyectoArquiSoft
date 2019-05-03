@@ -11,7 +11,7 @@ var UserSchema = new mongoose.Schema({
     required: true
   },
   fecha: {
-    type: fecha,
+    type: Date,
     required: true
   },
   ciudad: {

@@ -11,7 +11,7 @@ export default (app) => {
         .get(login.logout); 
 
     app.route('/user')
-        .get(user.getUser)
+        .get(user.obtenerUsuario)
         .post(user.createUser)
         .put(user.upfechaUser)
         .delete(user.deleteUser);
