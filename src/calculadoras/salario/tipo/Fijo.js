@@ -1,4 +1,4 @@
-export class CalculadorTiempoFijo{
+export class Fijo{
     constructor(montoKardex){
         this.montoKardex = montoKardex;
     }

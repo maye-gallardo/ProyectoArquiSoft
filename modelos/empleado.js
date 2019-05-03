@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var User = require('../models/user');
+var User = require('./usuario');
 
 var EmployeeSchema = new mongoose.Schema({
   user: {
@@ -8,15 +8,15 @@ var EmployeeSchema = new mongoose.Schema({
     required: true,
     trim: true
   },
-  balance: {
+  saldo: {
     type: Int16Array,
     required: true,
   },
-  type: {
+  tipo: {
     type: String,
     required: true,
   },
-  comission: {
+  comision: {
     type: Float32Array,
     required: true,
   }

@@ -4,7 +4,8 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
-import routes from './routes/router.js';
+var path = require('path');
+import routes from './rutas/router.js';
 
 //connect to MongoDB
 mongoose.connect('mongodb://localhost/generadorDeBoletas');
@@ -33,6 +34,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // serve static files from template
 app.use(express.static(__dirname + '/templates'));
+app.set('views', path.join(__dirname, './vistas'));
 app.set('view engine', 'ejs');
 
 
