@@ -17,4 +17,9 @@ exports.profile = (req, res, next) =>  {
 exports.perfil = (req, res, next) =>  {
     return res.render('perfil.ejs');
 };
+
+// GET route for reading data
+exports.email = (req, res, next) =>  {
+    return res.render('email.ejs');
+};
   
