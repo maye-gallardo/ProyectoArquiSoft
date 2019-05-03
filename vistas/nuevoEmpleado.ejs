@@ -6,7 +6,7 @@
 <head>
     <title>Generar boleta</title>
 	<mvc:resources mapping="/webjars/**" location="/webjars/"/>
-	<link href="css/profile.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="css/boleta.css" rel="stylesheet" type="text/css" media="all" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -31,23 +31,26 @@
         </div>
     </div>
 </nav>
-<div class="row">
-    <u><h1>Perfil</h1></u>
-    <br/>
-    <b>Nombre:</b> <a><%= user.nombre %></a>
-    <br/><br/>
-    <b>Apellido: </b><a><%= user.apellido %></a>
-    <br/><br/>
-    <b>Email: </b><a><%= user.email %></a>
-    <br/><br/>
-    <b>Fecha de Nacimiento:</b> <a><%= user.fecha %></a>
-    <br/><br/>
-    <b>Ciudad: </b><a><%= user.ciudad %></a>
-    <br/><br/>
-</div>
-<div class="centrar">
-    <a style="background-color: #086A87; color: aliceblue;" class="btn btn-default" th:href="${ '/histories'}">Volver</a>
-    <a style="background-color: #086A87; color: aliceblue;" class="btn btn-default" href="/edit/user/profile">Editar</a>
+<br/><br/>
+<form action="/nuevoEmpleado" method="GET" class="form-signin"></form>
+    <div class="row">
+        <u><h1>Nuevo Empleado</h1></u>
+        <br/>
+        <b>Nombre:</b> <a th:text="${user.username}"></a>
+        <br/><br/>
+        <b>Email: </b><a th:text="${user.email}"></a>
+        <br/><br/>
+        <b>Fecha de pago:</b> <a th:text="${user.fecha}"></a>
+        <br/><br/>
+        <b>Ciudad: </b><a th:text="${user.ciudad}"></a>
+        <br/><br/>
+        <b>Monto:</b> <a></a>
+        <br/><br/><br/>
+    </div>
+    <div class="centrar">
+        <a style="background-color: #086A87; color: aliceblue;" class="btn btn-default" th:href="${ '/histories'}">Volver</a>
+        <a style="background-color: #086A87; color: aliceblue;" class="btn btn-default" href="/edit/user/profile">Editar</a>
+    </div>
 </div>
 </body>
 </html>

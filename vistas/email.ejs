@@ -12,6 +12,23 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="genera">
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/histories"><span class="glyphicon glyphicon-home" aria-hidden="true" style="color: white;"></span></a></li>
+                    <li><a style="color: white; font-size: 15px;" href="/boleta">Nueva boleta</a></li>
+                    <li><a style="color: white; font-size: 15px;" href="/nuevoEmpleado">Nuevo empleado</a></li>
+                </ul>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a style="color: white; font-size: 15px;" href="/peril"><span class="glyphicon glyphicon-user"></span></a></li>
+                        <li><a style="color: white; font-size: 15px;" th:href="${'/logout'}"><Afiliados>Cerrar Sesion</Afiliados></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
     <h2 style="margin-left: 44%; margin-top:13%;">Enviar un correo</h2>
     <br/>
     <section >

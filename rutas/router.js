@@ -17,13 +17,13 @@ export default (app) => {
         .delete(user.eliminarUsuario);
 
     app.route('/registration')
-        .get(views.registerPage);
+        .get(views.resgistar);
 
     app.route('/')
-        .get(views.home);
+        .get(views.login);
 
     app.route('/profileForm')
-        .get(views.profile);
+        .get(views.editarPerfil);
 
     app.route('/perfil')
         .get(views.perfil);
@@ -33,5 +33,8 @@ export default (app) => {
         .post(email.enviarEmail);
     
     app.route('/boleta')
-        .get(views.boleta)
+        .get(views.boleta);
+
+    app.route('/nuevoEmpleado')
+        .get(views.nuevoEmpleado);
 };
