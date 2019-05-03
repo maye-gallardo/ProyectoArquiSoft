@@ -30,22 +30,21 @@
         </div>
     </div>
 </nav>
+<br/><br/>
 <form action="/boleta" method="GET" class="form-signin"></form>
     <div class="row">
-        <u><h1>Perfil</h1></u>
+        <u><h1>Boleta Generada</h1></u>
         <br/>
         <b>Nombre:</b> <a th:text="${user.username}"></a>
         <br/><br/>
-        <b>Apellido: </b><a th:text="${user.apellido}"></a>
-        <br/><br/>
         <b>Email: </b><a th:text="${user.email}"></a>
         <br/><br/>
-        <b>Fecha de Nacimiento:</b> <a th:text="${user.fecha}"></a>
+        <b>Fecha de pago:</b> <a th:text="${user.fecha}"></a>
         <br/><br/>
         <b>Ciudad: </b><a th:text="${user.ciudad}"></a>
         <br/><br/>
-        <b>Direccion:</b> <a th:text="${user.direc}"></a>
-        <br/><br/>
+        <b>Monto:</b> <a></a>
+        <br/><br/><br/>
     </div>
     <div class="centrar">
         <a style="background-color: #086A87; color: aliceblue;" class="btn btn-default" th:href="${ '/histories'}">Volver</a>
