@@ -1,9 +1,9 @@
 var mongoose = require('mongoose');
-var User = require('./usuario');
+var usuario = require('./usuario');
 
 var EmployeeSchema = new mongoose.Schema({
-  user: {
-    type: User,
+  usuario: {
+    type: usuario,
     unique: true,
     required: true,
     trim: true

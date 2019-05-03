@@ -14,7 +14,7 @@ export class CalculadorSalario{
         else if(this.tipo == "PARCIAL"){
             return new Parcial(saldo, tarjetas);
         }
-        else{
+        else  if(this.tipo == "COMISION"){
             return new Comision(porcentajeComision,tarjetas);
         }
     }
