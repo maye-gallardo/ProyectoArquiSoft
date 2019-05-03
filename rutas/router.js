@@ -1,7 +1,7 @@
-import user from '../controllers/userController';
-import login from '../controllers/loginController';
-import views from '../controllers/viewsController';
-import email from '../controllers/emailController';
+import user from '../controladores/usuario';
+import login from '../controladores/login';
+import views from '../controladores/vistas';
+import email from '../controladores/email';
 
 export default (app) => {
     app.route('/login')

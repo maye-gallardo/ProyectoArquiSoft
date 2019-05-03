@@ -1,4 +1,4 @@
-var User = require('../models/user');
+var User = require('../modelos/usuario');
 
 exports.obtenerUsuario = (req, res, next) => {
     User.findById(req.session.userId)

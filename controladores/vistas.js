@@ -1,4 +1,4 @@
-var User = require('../models/user');
+var User = require('../modelos/usuario');
 
 // GET route for reading data
 exports.resgistar = (req, res, next) =>  {

@@ -1,4 +1,4 @@
-export class TarjetaAsistencia{
+export class Asistencia{
     constructor(fecha, horaIngreso, horaSalida){
         this.fecha = fecha;
         this.horaIngreso = horaIngreso;

@@ -1,9 +1,9 @@
-export class CalculadorFechaFijo{
+export class Fijo{
     obtenerDia(fecha){
         return fecha.getDay();
     }
     obtenerMes(fecha){
-        return fecha.getfecha();
+        return fecha.getDate();
     }
     esUltimoViernesDelMes(fecha){
         return (this.obtenerDia(fecha)==5)&&(this.obtenerMes(fecha)>24);

@@ -1,4 +1,4 @@
-export class CalculadorComision{
+export class Comision{
     constructor(porcentajeComision, TarjetaDeVentas){
         this.porcentajeComision = porcentajeComision;
         this.TarjetaDeVentas = TarjetaDeVentas;

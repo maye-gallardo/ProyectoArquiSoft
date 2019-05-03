@@ -42,7 +42,7 @@
     "nyc": "^13.2.0"
   },
   "description": "Generador de boleta de empleados",
-  "main": "CalculadorComision.js",
+  "main": "Comision.js",
   "directories": {
     "test": "test"
   },

@@ -1,4 +1,4 @@
-var User = require('../models/user');
+var User = require('../modelos/usuario');
 
 exports.login = (req, res, next) => {
     if(req.body.email && req.body.contrasenia) {

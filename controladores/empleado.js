@@ -1,4 +1,4 @@
-var employee = require('../models/employeeModel');
+var employee = require('../modelos/empleado');
 
 exports.getEmployee = (req, res, next) => {
     employee.findById(req.body.employeeId)
@@ -18,12 +18,12 @@ exports.getEmployee = (req, res, next) => {
 };
 
 exports.createEmployee = (req, res, next) => {
-  if (req.body.user && req.body.balance && req.body.type && req.body.comission) {
+  if (req.body.user && req.body.saldo && req.body.tipo && req.body.comision) {
     var employeeData = {
       user: req.body.user,
-      balance: req.body.balance,
-      type: req.body.type,
-      comission: req.body.comission
+      saldo: req.body.saldo,
+      tipo: req.body.tipo,
+      comision: req.body.comision
     }
     employee.create(employeeData, function (error, employee) {
       if (error) {
@@ -44,12 +44,12 @@ exports.deleteEmployee = (req) => {
 };
 
 exports.updateEmployee = (req, res, next) =>{
-    if (req.body.user && req.body.balance && req.body.type && req.body.comission) {
+    if (req.body.user && req.body.saldo && req.body.tipo && req.body.comision) {
         var employeeData = {
           user: req.body.user,
-          balance: req.body.balance,
-          type: req.body.type,
-          comission: req.body.comission
+          saldo: req.body.saldo,
+          tipo: req.body.tipo,
+          comision: req.body.comision
         }
         employee.create(employeeData, function (error, employee) {
           if (error) {

@@ -1,5 +1,5 @@
-import { CalculadorSalario } from "./CalculadorSalario";
-import { CalculadorFecha } from "./CalculadorFecha";
+import { CalculadorSalario } from "./calculadoras/salario/Salario";
+import { CalculadorFecha } from "./calculadoras/fecha/Fecha";
 
 export class Empleado{ 
     constructor(nombre, saldo, tipo, porcentajeComision){

@@ -1,4 +1,4 @@
-export class CalculadorFechaParcial{
+export class Parcial{
     obtenerFecha(fecha){
         return fecha.getDay();
     }
