@@ -19,21 +19,21 @@ exports.getUser = (req, res, next) => {
 
 exports.createUser = (req, res, next) => {
 
-  if (req.body.password !== req.body.passwordConf) {
-    var err = new Error('Passwords do not match.');
+  if (req.body.contrasenia !== req.body.contraseniaConf) {
+    var err = new Error('contrasenias do not match.');
     err.status = 400;
-    res.send("passwords dont match");
+    res.send("contrasenias dont match");
     return next(err);
   }
 
-  if (req.body.email && req.body.password && req.body.passwordConf && req.body.firstname && req.body.lastname && req.body.city && req.body.date ) {
+  if (req.body.email && req.body.contrasenia && req.body.contraseniaConf && req.body.firstname && req.body.lastname && req.body.city && req.body.date ) {
     var userData = {
       email: req.body.email,
       firstname: req.body.firstname,
       lastname: req.body.lastname,
       city: req.body.city,
       date: req.body.date,
-      password: req.body.password,
+      contrasenia: req.body.contrasenia,
     }
     User.create(userData, function (error, user) {
       if (error) {
@@ -56,14 +56,14 @@ exports.deleteUser = (req) => {
 
 exports.updateUser = (req, res, next) =>{
     var userData = this.getUser;
-      if (req.body.email && req.body.password && req.body.passwordConf && req.body.firstname && req.body.lastname && req.body.city && req.body.date) {
+      if (req.body.email && req.body.contrasenia && req.body.contraseniaConf && req.body.firstname && req.body.lastname && req.body.city && req.body.date) {
         var userData = {
           email: req.body.email,
           firstname: req.body.firstname,
           lastname: req.body.lastname,
           city: req.body.city,
           date: req.body.date,
-          password: req.body.password,
+          contrasenia: req.body.contrasenia,
         }
         User.create(userData, function (error, user) {
           if (error) {

@@ -31,4 +31,7 @@ export default (app) => {
     app.route('/email')
         .get(views.email)
         .post(email.sendEmail);
+    
+    app.route('/boleta')
+        .get(views.boleta)
 };

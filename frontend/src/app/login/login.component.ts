@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
     ngOnInit() {
         this.loginForm = this.formBuilder.group({
             username: ['', Validators.required],
-            password: ['', Validators.required]
+            contrasenia: ['', Validators.required]
         });
 
         // reset login status
@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
         }
 
         this.loading = true;
-        this.authenticationService.login(this.f.username.value, this.f.password.value)
+        this.authenticationService.login(this.f.username.value, this.f.contrasenia.value)
             .pipe(first())
             .subscribe(
                 data => {

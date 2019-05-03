@@ -80,7 +80,7 @@
                         <div class="col-sm-9">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                <input type="password" id="password" name="password" th:field="*{password}"
+                                <input type="contrasenia" id="contrasenia" name="contrasenia" th:field="*{contrasenia}"
                                        placeholder="Contraseña" class="form-control" />
                             </div>
                         </div>
@@ -92,7 +92,7 @@
                         <div class="col-sm-9">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                <input type="password" id="passwordConf" name="passwordConf" th:field="*{passwordConf}"
+                                <input type="contrasenia" id="contraseniaConf" name="contraseniaConf" th:field="*{contraseniaConf}"
                                        placeholder="Repetir contraseña" class="form-control" />
                             </div>
                         </div>
@@ -128,11 +128,11 @@
                         input5.oninvalid = function(event) {
                             event.target.setCustomValidity('Ingresa una fecha de nacimiento valido ej. 01/05/1997');
                         }
-                        var input6 = document.getElementById('password');
+                        var input6 = document.getElementById('contrasenia');
                         input3.oninvalid = function(event) {
                             event.target.setCustomValidity('Debe ingresar una contraseña');
                         }
-                        var input7 = document.getElementById('passwordConf');
+                        var input7 = document.getElementById('contraseniaConf');
                         input3.oninvalid = function(event) {
                             event.target.setCustomValidity('Debe ingresar nuevamente una contraseña');
                         }

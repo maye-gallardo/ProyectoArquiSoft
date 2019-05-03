@@ -24,14 +24,14 @@ var UserSchema = new mongoose.Schema({
     required: true,
     trim: true
   },
-  password: {
+  contrasenia: {
     type: String,
     required: true,
   }
 });
 
 //authenticate input against database
-UserSchema.statics.authenticate = function (email, password, callback) {
+UserSchema.statics.authenticate = function (email, contrasenia, callback) {
   User.findOne({ email: email })
     .exec(function (err, user) {
       if (err) {
@@ -41,7 +41,7 @@ UserSchema.statics.authenticate = function (email, password, callback) {
         err.status = 401;
         return callback(err);
       }
-      bcrypt.compare(password, user.password, function (err, result) {
+      bcrypt.compare(contrasenia, user.contrasenia, function (err, result) {
         if (result === true) {
           return callback(null, user);
         } else {
@@ -51,14 +51,14 @@ UserSchema.statics.authenticate = function (email, password, callback) {
     });
 }
 
-//hashing a password before saving it to the database
+//hashing a contrasenia before saving it to the database
 UserSchema.pre('save', function (next) {
   var user = this;
-  bcrypt.hash(user.password, 10, function (err, hash) {
+  bcrypt.hash(user.contrasenia, 10, function (err, hash) {
     if (err) {
       return next(err);
     }
-    user.password = hash;
+    user.contrasenia = hash;
     next();
   })
 });
