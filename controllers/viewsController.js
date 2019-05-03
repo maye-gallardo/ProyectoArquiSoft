@@ -1,18 +1,19 @@
 var User = require('../models/user');
 
 // GET route for reading data
-exports.registerPage = (req, res, next) =>  {
+exports.resgistar = (req, res, next) =>  {
     return res.render('register.ejs');
   };
   
 // GET route for reading data
-exports.home = (req, res, next) =>  {
+exports.login = (req, res, next) =>  {
     return res.render('index.ejs');
 };
 // GET route for reading data
-exports.profile = (req, res, next) =>  {
+exports.editarPerfil = (req, res, next) =>  {
     return res.render('profileForm.ejs');
 };
+
 // GET route for reading data
 exports.perfil = (req, res, next) =>  {
     User.findById(req.session.userId)
@@ -39,5 +40,10 @@ exports.email = (req, res, next) =>  {
 // GET route for reading data
 exports.boleta = (req, res, next) =>  {
     return res.render('boleta.ejs');
+};
+
+// GET route for reading data
+exports.nuevoEmpleado = (req, res, next) =>  {
+  return res.render('nuevoEmpleado.ejs');
 };
   
